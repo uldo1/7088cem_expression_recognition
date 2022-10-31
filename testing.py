@@ -33,8 +33,7 @@ class TestCaseExamples(unittest.TestCase):
     def test_random_content(self):
         tester = app.test_client(self)
         response = tester.get('/random', content_type='html/text')
-        #self.assertTrue(b'User Account Demo' in response.data)  # passed the test
-        # self.assertFalse(b'Administration Demo' in response.data)  # passed the test
+        # check if contains text self.assertTrue(b'' in response.data)  # passed the test
 
 
 
