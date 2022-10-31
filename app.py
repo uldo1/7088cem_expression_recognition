@@ -1,8 +1,8 @@
 # importing flask module fro
 from flask import Flask, render_template, request, g
 from flaskext.mysql import MySQL
-#import requests  # for API example
-#import urllib.parse  # for API example
+import requests  # for API example
+import urllib.parse  # for API example
 
 mysql = MySQL()
 

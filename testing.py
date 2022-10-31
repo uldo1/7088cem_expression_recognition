@@ -1,9 +1,7 @@
 import unittest
 from app import app
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
+
 class BasicTestsSetup(unittest.TestCase):
 
     def setUp(self):
@@ -23,8 +21,9 @@ class TestCaseExamples(unittest.TestCase):
 
     def test_login_status(self):
         tester = app.test_client(self)
-        response = tester.get('/loginpg', content_type='html/text')
+        response = tester.get('/', content_type='html/text')
         self.assertEqual(response.status_code, 200)  # pass (test if the page renders successfully)
+
 
     def test_random_status(self):
         tester = app.test_client(self)
