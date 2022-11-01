@@ -29,11 +29,21 @@ class TestCaseExamples(unittest.TestCase):
         tester = app.test_client(self)
         response = tester.get('/random', content_type='html/text')
         self.assertEqual(response.status_code, 200)
-
-    def test_random_content(self):
+    def test_veg_status(self):
         tester = app.test_client(self)
-        response = tester.get('/random', content_type='html/text')
-        # check if contains text self.assertTrue(b'' in response.data)  # passed the test
+        response = tester.get('/veggie', content_type='html/text')
+        self.assertEqual(response.status_code, 200)
+
+    def test_nonveg_status(self):
+        tester = app.test_client(self)
+        response = tester.get('/non_veggie', content_type='html/text')
+        self.assertEqual(response.status_code, 200)
+    #def test_location_status(self):
+        #tester = app.test_client(self)
+        #response = tester.get('/random', content_type='html/text')
+        #self.assertEqual(response.status_code, 200)
+
+
 
 
 
